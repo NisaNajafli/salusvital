@@ -31,3 +31,45 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.testimonials-swiper', {
+  loop: true, 
+  slidesPerView: 1,
+  spaceBetween: 30,
+  // autoplay: { delay: 3000, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: {
+     0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 }
+  }
+});
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const productsSwiper = new Swiper(".products-swiper", {
+    slidesPerView: 6,
+    spaceBetween: 20,
+    loop: false,
+    speed: 600,
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1.2,
+        spaceBetween: 14,
+      },
+      576: {
+        slidesPerView: 2.2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+      1280: {
+        slidesPerView: 5,
+      },
+    },
+  });
+});
