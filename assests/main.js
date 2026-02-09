@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
       fadeEffect: {
         crossFade: true, // yumşaq keçid
       },
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 4500,
+      //   disableOnInteraction: false,
+      // },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -66,9 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       1024: {
         slidesPerView: 4,
-      },
-      1280: {
-        slidesPerView: 5,
       },
     },
   });
