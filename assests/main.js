@@ -47,29 +47,51 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 });
 document.addEventListener("DOMContentLoaded", function () {
+
+  // OUTER PRODUCTS SLIDER
   const productsSwiper = new Swiper(".products-swiper", {
-    slidesPerView: 6,
-    spaceBetween: 20,
-    loop: false,
-    speed: 600,
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 30,
+    nested: true,
+
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
 
     breakpoints: {
-      320: {
-        slidesPerView: 1.2,
-        spaceBetween: 14,
-      },
-      576: {
-        slidesPerView: 2.2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 4,
-      },
-    },
+      0: { slidesPerView: 1 },
+      576: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+      1200: { slidesPerView: 4 },
+    }
   });
+
+
+  // INNER IMAGE SLIDERS
+  document.querySelectorAll(".product-image-swiper").forEach((el) => {
+    new Swiper(el, {
+      loop: true,
+      slidesPerView: 1,
+      nested: true,
+      touchStartPreventDefault: false,
+
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+
+      pagination: {
+        el: el.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+    });
+  });
+
 });
+;
+
 const openBtns = document.querySelectorAll('[data-modal-open]');
 const modal = document.querySelector('[data-modal]');
 const overlay = document.querySelector('[data-modal-overlay]');
@@ -98,3 +120,5 @@ closeBtn.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
