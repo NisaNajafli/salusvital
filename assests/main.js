@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 30,
     nested: true,
 
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3500,
+    //   disableOnInteraction: false,
+    // },
 
     breakpoints: {
       0: { slidesPerView: 1 },
@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
       nested: true,
       touchStartPreventDefault: false,
 
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 2000,
+      //   disableOnInteraction: false,
+      // },
 
       pagination: {
         el: el.querySelector(".swiper-pagination"),
